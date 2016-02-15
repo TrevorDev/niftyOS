@@ -25,7 +25,10 @@
     "electron-prebuilt": "^0.36.0"
   },
   "dependencies": {
+    "chance": "^0.8.0",
     "jquery": "^2.2.0",
+    "keypress.js": "^2.1.0",
+    "lodash": "^4.3.0",
     "rivets": "^0.8.1"
   }
 }
