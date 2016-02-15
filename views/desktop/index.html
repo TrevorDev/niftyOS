@@ -6,12 +6,17 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/main.css">
 
   </head>
-  <body class="desktop-background">
+  <body id="environment" class="desktop-background">
     <div class="taskbar">
-      <input style=""></input>
-      <input type='button' value='XYZ' id='test'>
+      <form id="searchForm" style="display:inline-block">
+        <input id="searchBar" style=""></input>
+      </form>
+      <span rv-each-app="apps">
+        <input type='button' rv-value='app.title' rv-on-click="taskBarAppClicked" id='test'>
+      </span>
+
     </div>
-    <div id="desktop" style="width:100%;height:100%;">
+    <div id="desktop" style="position: absolute;width:100%;bottom: 0px;top: 21px;margin:0px;padding:0">
 
     </div>
       <!-- <webview id="foo" src="https://www.github.com/" style="display:inline-block; width:100%; height:480px"></webview> -->

@@ -3,44 +3,48 @@ import keypress from "../../libs/keypress";
 import $ = require('jquery');
 
 class AppWindow {
-  constructor(){
-    var element = $("<div style='width: 100%;height:100%;background-color:red;'><webview id='foo' src='https://www.google.com/' style='display:inline-block; width:100%; height:100%'></webview></div>")
-    $("#desktop").append(element)
-    // element.on('mousedown', function(e) {
-    //     $(this).addClass('draggable').parents().on('mousemove', function(e) {
-    //         $('.draggable').offset({
-    //             top: e.pageY - $('.draggable').outerHeight() / 2,
-    //             left: e.pageX - $('.draggable').outerWidth() / 2
-    //         }).on('mouseup', function() {
-    //             $(this).removeClass('draggable');
-    //         });
-    //     });
-    //     e.preventDefault();
-    // }).on('mouseup', function() {
-    //     $('.draggable').removeClass('draggable');
-    // });
-    // console.log($("#desktop").length);
+  title:string
+  element:JQuery
+  constructor(search){
+    this.title="webpage";
+    this.element = $("<div style='width: 100%;height:100%;'><webview id='foo' src='https://www.google.com/?gws_rd=ssl#safe=off&q="+search+"' style='width:100%; height:100%'></webview></div>")
+    $("#desktop").append(this.element)
   }
-
   public close(){
 
   }
+  public setHidden(){this.element.css("display", "none")}
+  public toggleHidden(){
+    if(this.element.css("display")!="none"){
+      this.element.css("display", "none")
+    }else{
+      this.element.css("display", "inherit")
+    }
+
+  }
 }
-
-
+var view = {
+  apps: [],
+  taskBarAppClicked: (e,binding)=>{
+    view.apps.forEach((app)=>{
+      if(app != binding.app){
+        app.setHidden();
+      }
+    })
+    binding.app.toggleHidden()
+  }
+}
+r.bind($("#environment"), view)
+$("#searchForm").submit((e)=>{
+  view.apps.push(new AppWindow($("#searchBar").val()));
+  $("#searchBar").val("")
+  e.preventDefault();
+})
 var listener = keypress.onKeyComboPressed((e)=>{
   //check if key combo pressed
-  if(_.isEmpty(_.xor([16], e))){
-    var x = new AppWindow();
+  if(_.isEmpty(_.xor([18], e))){
+    //var x = new AppWindow();
+    $("#searchBar").focus()
   }
-  console.log(e)
+  //console.log(e)
 })
-
-// var listen = new keypress.keypress.Listener();
-// listen.simple_combo("shift s", ()=>{
-//   var x = new AppWindow();
-// })
-//
-// listen.simple_combo("shift", ()=>{
-//   console.log("bfds")
-// })
