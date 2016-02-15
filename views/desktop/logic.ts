@@ -1,5 +1,5 @@
 import r from "../../libs/rivetsConfig";
-import keypress = require("keypress.js");
+import keypress from "../../libs/keypress";
 import $ = require('jquery');
 
 class AppWindow {
@@ -27,12 +27,20 @@ class AppWindow {
   }
 }
 
-console.log(keypress)
-var listen = new keypress.keypress.Listener();
-listen.simple_combo("shift s", ()=>{
-  var x = new AppWindow();
+
+var listener = keypress.onKeyComboPressed((e)=>{
+  //check if key combo pressed
+  if(_.isEmpty(_.xor([16], e))){
+    var x = new AppWindow();
+  }
+  console.log(e)
 })
 
-listen.simple_combo("shift", ()=>{
-  console.log("bfds")
-})
+// var listen = new keypress.keypress.Listener();
+// listen.simple_combo("shift s", ()=>{
+//   var x = new AppWindow();
+// })
+//
+// listen.simple_combo("shift", ()=>{
+//   console.log("bfds")
+// })
