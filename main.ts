@@ -8,11 +8,12 @@ const BrowserWindow = electron.BrowserWindow;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow:Electron.BrowserWindow;
 
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600});
+  
   //mainWindow.setMenu(null);
   mainWindow.setFullScreen(true)
   // and load the index.html of the app.
