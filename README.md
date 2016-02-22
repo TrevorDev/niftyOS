@@ -10,6 +10,11 @@ browser based VR ready OS interface
 - Have a faster startup than mainstream os's
 - Experiment with new user interfaces
 
+# Screenshots
+![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/desktop.PNG)
+![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/search.PNG)
+![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/office.PNG)
+
 ```
 Todo
 back/forward buttons
