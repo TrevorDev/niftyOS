@@ -11,9 +11,9 @@ browser based VR ready OS interface
 - Experiment with new user interfaces
 
 # Screenshots
-![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/desktop.PNG)
-![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/search.PNG)
-![img](https://github.com/TrevorDev/niftyOS/tree/master/screenshots/office.PNG)
+![img](https://raw.githubusercontent.com/TrevorDev/niftyOS/master/screenshots/desktop.PNG)
+![img](https://raw.githubusercontent.com/TrevorDev/niftyOS/master/screenshots/search.PNG)
+![img](https://raw.githubusercontent.com/TrevorDev/niftyOS/master/screenshots/office.PNG)
 
 ```
 Todo
