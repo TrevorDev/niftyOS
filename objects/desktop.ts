@@ -10,7 +10,7 @@ class Desktop {
   constructor(){
     this.runningApps = []
     this.view = $("<div style='width:100%;height:100%'><\div>")
-    this.appSpace = $("<div style='position: absolute;width:100%;bottom: 0px;top: 21px;margin:0px;padding:0'></div>")
+    this.appSpace = $("<div style='position: absolute;width:100%;bottom: 0px;top: 22px;margin:0px;padding:0'></div>")
     this.taskbar = new Taskbar(this);
     $("#environment").append(this.view)
     this.view.append(this.taskbar.view)
@@ -20,6 +20,10 @@ class Desktop {
   addAppWindow(app){
     this.appSpace.append(app.view)
     this.runningApps.push(app)
+  }
+
+  removeAppWindow(app){
+    this.runningApps.splice(this.runningApps.indexOf(app), 1)
   }
 
   hideAllAppWindows(){

@@ -11,6 +11,19 @@ browser based VR ready OS interface
 - Experiment with new user interfaces
 
 ```
+Todo
+back/forward buttons
+webpage search
+nicer icons
+pin to taskbar
+console
+side by side apps
+default apps
+get good text editor working
+get adblock to work in webview
+multiple desktops
+
+
 install archlinux in virtual box
 https://www.howtoforge.com/tutorial/arch-linux-installation-with-xfce-desktop/
 install nodejs, npm

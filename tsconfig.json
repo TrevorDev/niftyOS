@@ -26,6 +26,7 @@
         "libs/rivetsConfig.ts",
         "main.ts",
         "objects/appWindow.ts",
+        "objects/clock.ts",
         "objects/desktop.ts",
         "objects/taskbar.ts",
         "typings/chance/chance.d.ts",

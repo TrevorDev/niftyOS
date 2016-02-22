@@ -17,7 +17,7 @@ class AppWindow {
     //constructing
     this.title="web";
     this.view = $("<div style='width: 100%;height:100%;'></div>")
-    this.webView = $("<webview id='foo' src='"+url+"' style='width:100%; height:100%' plugins></webview>");
+    this.webView = $("<webview id='foo' src='"+url+"' style='width:100%; height:100%' nodeintegration></webview>");
     this.view.append(this.webView)
 
     //webview events
@@ -25,13 +25,17 @@ class AppWindow {
       let window = new AppWindow(this.desktop, e.originalEvent.url);
       this.desktop.addAppWindow(window);
       window.setHidden();
+    });
+
+    this.webView.on("dom-ready", (e)=>{
       //document.getElementById("foo").openDevTools();
     });
 
     //view.apps.push(this)
   }
-  public close(){
-
+  public dispose(){
+    this.desktop.removeAppWindow(this)
+    this.view.remove();
   }
   public setHidden(hide=true){
     if(hide){
